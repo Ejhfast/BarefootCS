@@ -1,6 +1,7 @@
 BarefootCS::Application.routes.draw do
-  match 'vibram/:inch.:fraction(.:format)' => 'vibram#index'
-	match 'vibram/parse' => 'vibram#parse'
+  match 'vibram/convert/:inch.:fraction(.:format)' => 'vibram#convert'
+	match 'vibram' => 'vibram#index'
+	match 'vibram/parse(.:format)' => 'vibram#parse'
 	
 	# The priority is based upon order of creation:
   # first created -> highest priority.

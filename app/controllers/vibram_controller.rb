@@ -1,18 +1,24 @@
+require 'builder'
 class VibramController < ApplicationController
+	respond_to :html, :xml
+	
 	def index
+	end
+
+	def convert
+
 		inch = params[:inch]
 		fraction = params[:fraction]
-		myh = Hash.new
-		myh["inches"] = do_conversion(inch,fraction)		
+		@res = do_conversion(inch,fraction)		
 
 		respond_to do |format|
-			format.html 
-			format.xml { render :xml => myh.to_xml } 
+			format.html
+			#format.xml { render :xml => myh.to_xml } 
+			format.xml
 		end
 	end
 	
 	def parse
-          render => :part
 	end
 	
 	def do_conversion inch, fraction
@@ -42,7 +48,7 @@ class VibramController < ApplicationController
 		elsif inch >= 12.25 && inch < 12.5
 			48
 		else
-			"not a valid value"
+			-1
 		end
 	end
 end

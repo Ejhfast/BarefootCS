@@ -4,9 +4,7 @@ targetNamespace="http://www.w3schools.com"
 xmlns="http://www.w3schools.com"
 elementFormDefault="qualified">
 
-<xs:element name="hash">
-	<xs:element name="inches" type="xs:integer"/>
-</xs:element>
+<xs:element name="inches" type="xs:integer"/>
 
 </xs:schema>
 

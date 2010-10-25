@@ -21,6 +21,32 @@ class VibramController < ApplicationController
 	def parse
 	end
 	
+	def radians angle
+		angle.to_f/180.0 * Math::PI
+	end
+	
+	def coordinate_distance 
+		coords = 
+	end
+
+	def dist points
+		nowLa = points[0][0]
+		nowLo = points[0][1]
+		radius = 6371
+		dist = 0
+		points.each do |p|
+			distLa = radians (nowLa - p[0])
+			distLo = radians (nowLo - p[1])
+			s1 = Math.sin(distLa/2) * Math.sin(distLa/2) + Math.cos( radians( nowLa )) * Math.cos( radians ( p[0] ) ) * Math.sin(distLo/2) * Math.sin(distLo/2)
+			s2 = 2 * Math.atan2( Math.sqrt(s1), Math.sqrt(1-a) )
+			newd = radius * s2
+			dist = dist + newd
+			nowLa = p[0]
+			nowLo = p[1]	
+		end
+		dist			
+	end
+	
 	def do_conversion inch, fraction
 		inch = inch.to_i
 		fraction = fraction.to_f / 100

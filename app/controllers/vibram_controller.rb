@@ -26,7 +26,11 @@ class VibramController < ApplicationController
 	end
 	
 	def coordinate_distance 
-		coords = 
+		coords = JSON.parse(params[:coords])
+		@distance = dist(coords)
+		respond_to do |format|
+			format.xml
+		end
 	end
 
 	def dist points
@@ -38,7 +42,7 @@ class VibramController < ApplicationController
 			distLa = radians (nowLa - p[0])
 			distLo = radians (nowLo - p[1])
 			s1 = Math.sin(distLa/2) * Math.sin(distLa/2) + Math.cos( radians( nowLa )) * Math.cos( radians ( p[0] ) ) * Math.sin(distLo/2) * Math.sin(distLo/2)
-			s2 = 2 * Math.atan2( Math.sqrt(s1), Math.sqrt(1-a) )
+			s2 = 2 * Math.atan2( Math.sqrt(s1), Math.sqrt(1-s1) )
 			newd = radius * s2
 			dist = dist + newd
 			nowLa = p[0]

@@ -5,9 +5,27 @@
 	Where {inch} and {fraction} correspond to the size of your feet.
 %p
 	E.g. for my 10.5 inch feet: http://vibramconverter.heroku.com/vibram/convert/10.5.xml
+	
 %p
 	For convenience, you can drop the .xml for a traditional html response
 %p
 	See
 	= link_to 'this', '/vibram/parse.xml' 
-	for the XSD 
+	for the XSD
+
+%br	
+%h2 Second Web Service (Calculates distance based on provided coordinates)
+	
+%p Usage: (Second Web service): http://vibramconverter.heroku.com/vibram/coordinate_distance.xml?coords=[[latitude,longitude],[latitude,longitude]]
+
+%p
+	*Latitude and Longitude must be provided in decimal form
+	
+%p
+	Example:
+	%br
+	%br
+	http://vibramconverter.heroku.com/vibram/coordinate_distance.xml?coords=[[38.05225,-78.499827],[38.035731,-78.501205],[38.034249,-78.499478]]
+	%br
+	= link_to 'E.g. distance from Kroger to Bodos to Boylan Heights:', 'http://vibramconverter.heroku.com/vibram/coordinate_distance.xml?coords=[[38.05225,-78.499827],[38.035731,-78.501205],[38.034249,-78.499478]]'
+

@@ -3,7 +3,6 @@ BarefootCS::Application.routes.draw do
 	match 'vibram/coordinate_distance(.:format)' => 'vibram#coordinate_distance'
 	match 'vibram' => 'vibram#index'
 	match 'vibram/parse(.:format)' => 'vibram#parse'
-	match 'vibram/parse2(.:format)' => 'vibram#parse2'
 	root :to => 'vibram#index'	
 	# The priority is based upon order of creation:
   # first created -> highest priority.

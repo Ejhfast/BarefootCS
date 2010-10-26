@@ -4,7 +4,7 @@ targetNamespace="http://www.w3schools.com"
 xmlns="http://www.w3schools.com"
 elementFormDefault="qualified">
 
-<xs:element name="distance" type="xs:float"/>
+<xs:element name="miles" type="xs:float"/>
 
 
 </xs:schema>

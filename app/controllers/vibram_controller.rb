@@ -16,7 +16,7 @@ class VibramController < ApplicationController
 			format.html
 			#format.xml { render :xml => myh.to_xml } 
 			format.xml
-			format.json { render :json => @res.to_json}
+			format.json { render :json => [@res].to_json}
 		end
 	end
 	
@@ -32,7 +32,7 @@ class VibramController < ApplicationController
 		@distance = dist(coords)
 		respond_to do |format|
 			format.xml
-			format.json { render :json => distance.to_json}
+			format.json { render :json => [distance].to_json}
 		end
 	end
 

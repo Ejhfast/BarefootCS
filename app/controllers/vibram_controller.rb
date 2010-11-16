@@ -53,8 +53,8 @@ class VibramController < ApplicationController
 	end
 	
 	def do_conversion inch, fraction, gender
-		inch = inch.to_i
-		fraction = fraction.to_f / 100
+		inch = inch.to_f
+		fraction = fraction[0..1].to_f / 100.0
 		inch = inch + fraction
 		mens_inches = [9.75, 10.0, 10.25, 10.5, 10.75, 11.0, 11.25, 11.5, 11.75, 12.0, 12.25]
 		womens_inches = [8.375, 8.625, 8.875, 9.125, 9.375, 9.625, 9.875, 10.125, 10.375]
@@ -69,7 +69,7 @@ class VibramController < ApplicationController
 		    inch = tempInch / 4
 		    return mens_euro[mens_inches.index(inch)]
 	    end
-    elsif ((inch >= 8.375 && inch < 10.625) && gender == "female")
+    elsif ((inch >= 8 && inch < 10.625) && gender == "female")
       if womens_inches.include?(inch)
         return womens_euro[womens_inches.index(inch)]
       else

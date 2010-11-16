@@ -2,14 +2,14 @@
 %h2
 	Vibram KSO Size Conversion
 %p
-	Our first service does shoe size conversion, for the vibram fivefingers. You can also use it for generic US -> European conversion.
+	Our first service does shoe size conversion, for the Vibram FiveFingers. You can also use it for generic US -> European conversion.
 %p 
-	Usage: http://vibramconverter.heroku.com/vibram/convert/{inch}.{fraction}.{gender}.xml 
+	Usage: http://vibramconverter.heroku.com/vibram/convert/{inch}/{fraction}/{gender}.xml 
 %p
 	Where {inch} and {fraction} correspond to the size of your feet and {gender} is "male" or "female"
 %p
 	E.g. for my 10.5 inch feet: 
-	= link_to 'http://vibramconverter.heroku.com/vibram/convert/10.5.male.xml', 'http://vibramconverter.heroku.com/vibram/convert/10.5.male.xml'
+	= link_to 'http://vibramconverter.heroku.com/convert/10/5/male.xml', 'http://vibramconverter.heroku.com/convert/10/5/male.xml'
 %p
 	For convenience, you can drop the .xml for a traditional html response
 %p
@@ -25,7 +25,7 @@
 	*Latitude and Longitude must be provided in decimal form
 %p
 	E.g: Distance from Kroger to Bodos to Boylan Heights:
-	= link_to 'http://vibramconverter.heroku.com/vibram/coordinate_distance.xml?coords=[[38.05225,-78.499827],[38.035731,-78.501205],[38.034249,-78.499478]]', 'http://vibramconverter.heroku.com/vibram/coordinate_distance.xml?coords=[[38.05225,-78.499827],[38.035731,-78.501205],[38.034249,-78.499478]]'
+	= link_to 'http://vibramconverter.heroku.com/coordinate_distance.xml?coords=[[38.05225,-78.499827],[38.035731,-78.501205],[38.034249,-78.499478]]', 'http://vibramconverter.heroku.com/vibram.xml?coords=[[38.05225,-78.499827],[38.035731,-78.501205],[38.034249,-78.499478]]'
 	%br
 	
 %p

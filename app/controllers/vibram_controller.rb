@@ -16,6 +16,7 @@ class VibramController < ApplicationController
 			format.html
 			#format.xml { render :xml => myh.to_xml } 
 			format.xml
+			format.json { render :json => @res.to_json}
 		end
 	end
 	
@@ -31,6 +32,7 @@ class VibramController < ApplicationController
 		@distance = dist(coords)
 		respond_to do |format|
 			format.xml
+			format.json { render :json => distance.to_json}
 		end
 	end
 
@@ -80,29 +82,4 @@ class VibramController < ApplicationController
     end
   end
 			
-		
-    # if inch >= 9.75 && inch < 10
-    #   38
-    # elsif inch >= 10 && inch < 10.25
-    #   39
-    # elsif inch >= 10.25 && inch < 10.5
-    #   40
-    # elsif inch >= 10.5 && inch < 10.75
-    #   41
-    # elsif inch >= 10.75 && inch < 11
-    #   42
-    # elsif inch >= 11 && inch < 11.25
-    #   43
-    # elsif inch >= 11.25 && inch < 11.5
-    #   44
-    # elsif inch >= 11.5 && inch < 11.75
-    #   45
-    # elsif inch >= 11.75 && inch < 12
-    #   46
-    # elsif inch >= 12.00 && inch < 12.25
-    #   47
-    # elsif inch >= 12.25 && inch < 12.5
-    #   48
-    # else
-    #   -1
 end

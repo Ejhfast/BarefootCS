@@ -1,35 +1,34 @@
-%h1 Docs
+%h1 Documentation:
+%h2
+	Vibram KSO Size Conversion
+%p
+	Our first service does shoe size conversion, for the vibram fivefingers. You can also use it for generic US -> European conversion.
 %p 
-	Usage: http://vibramconverter.heroku.com/vibram/convert/{inch}.{fraction}.xml 
+	Usage: http://vibramconverter.heroku.com/vibram/convert/{inch}.{fraction}.{gender}.xml 
 %p
-	Where {inch} and {fraction} correspond to the size of your feet.
+	Where {inch} and {fraction} correspond to the size of your feet and {gender} is "male" or "female"
 %p
-	E.g. for my 10.5 inch feet: http://vibramconverter.heroku.com/vibram/convert/10.5.xml
-	
+	E.g. for my 10.5 inch feet: 
+	= link_to 'http://vibramconverter.heroku.com/vibram/convert/10.5.male.xml', 'http://vibramconverter.heroku.com/vibram/convert/10.5.male.xml'
 %p
 	For convenience, you can drop the .xml for a traditional html response
 %p
 	See
 	= link_to 'this', '/vibram/parse.xml' 
 	for the XSD
-
-%br	
-%h2 Second Web Service (Calculates distance based on provided coordinates)
-	
-%p Usage: (Second Web service): http://vibramconverter.heroku.com/vibram/coordinate_distance.xml?coords=[[latitude,longitude],[latitude,longitude]]
-
+%h2 Distance Calculator
+%p 
+	Calculates distance given a list of provided coordinates)
+%p 
+	Usage: http://vibramconverter.heroku.com/vibram/coordinate_distance.xml?coords=[[latitude,longitude],[latitude,longitude]]
 %p
 	*Latitude and Longitude must be provided in decimal form
+%p
+	E.g: Distance from Kroger to Bodos to Boylan Heights:
+	= link_to 'http://vibramconverter.heroku.com/vibram/coordinate_distance.xml?coords=[[38.05225,-78.499827],[38.035731,-78.501205],[38.034249,-78.499478]]', 'http://vibramconverter.heroku.com/vibram/coordinate_distance.xml?coords=[[38.05225,-78.499827],[38.035731,-78.501205],[38.034249,-78.499478]]'
+	%br
 	
 %p
-	Example:
-	%br
-	%br
-	http://vibramconverter.heroku.com/vibram/coordinate_distance.xml?coords=[[38.05225,-78.499827],[38.035731,-78.501205],[38.034249,-78.499478]]
-	%br
-	= link_to 'E.g. distance from Kroger to Bodos to Boylan Heights:', 'http://vibramconverter.heroku.com/vibram/coordinate_distance.xml?coords=[[38.05225,-78.499827],[38.035731,-78.501205],[38.034249,-78.499478]]'
-	
-%p
-	%b LOOK
-	= link_to 'HERE', '/vibram/parse2.xml'
+	%b See
+	= link_to 'this', '/vibram/parse2.xml'
 	for the XSD

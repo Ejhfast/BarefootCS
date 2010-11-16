@@ -1,5 +1,5 @@
 BarefootCS::Application.routes.draw do
-  match 'vibram/convert/:inch.:fraction(.:format)' => 'vibram#convert'
+  match 'vibram/convert/:inch.:fraction.:gender(.:format)' => 'vibram#convert'
 	match 'vibram/coordinate_distance(.:format)' => 'vibram#coordinate_distance'
 	match 'vibram' => 'vibram#index'
 	match 'vibram/parse(.:format)' => 'vibram#parse'

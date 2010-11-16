@@ -73,10 +73,7 @@ class VibramController < ApplicationController
       if womens_inches.include?(inch)
         return womens_euro[womens_inches.index(inch)]
       else
-        tempInch = inch * 8
-        tempInch = tempInch.round
-        inch = tempInch / 8
-        return womens_euro[womens_inches.index(inch)]
+        return womens_euro[womens_inches.index(womens_inches.sort_by{|x| (x-inch).abs}.first)]
       end
     else
       -1
